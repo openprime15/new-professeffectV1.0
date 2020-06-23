@@ -1050,10 +1050,22 @@
   dependencies:
     "@vue/cli-shared-utils" "^4.4.4"
 
+"@vue/cli-plugin-router@~4.4.0":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-router/-/cli-plugin-router-4.4.5.tgz#9c987161ee3986744ce6bab7a3a09b5ec86c2759"
+  integrity sha512-vVTCQy4nYEDA8yqeJg8ohobDtAKCyuhkYDEzY0V9yoNzgSpRCgJtM0FDozPmaQpBHoeud17h2bf6hy6SuXUs3Q==
+  dependencies:
+    "@vue/cli-shared-utils" "^4.4.5"
+
 "@vue/cli-plugin-vuex@^4.4.4":
   version "4.4.4"
   resolved "https://registry.npm.taobao.org/@vue/cli-plugin-vuex/download/@vue/cli-plugin-vuex-4.4.4.tgz#42328c161978823a1eac97a07832a7aa225cbb9b"
   integrity sha1-QjKMFhl4gjoerJegeDKnqiJcu5s=
+
+"@vue/cli-plugin-vuex@~4.4.0":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-vuex/-/cli-plugin-vuex-4.4.5.tgz#4c4cf7f2f2361fb82ca8cc2062521d6c9741b849"
+  integrity sha512-CyWWv41cgVE7vcq/NcuH6Ee0zqFJFvIqkWVf3as6S5wRdeF5VHuhBh+5/A0zPyZOL6FVs32khYqvez+x6tVdfg==
 
 "@vue/cli-service@~4.4.0":
   version "4.4.4"
@@ -1129,6 +1141,24 @@
     read-pkg "^5.1.1"
     request "^2.88.2"
     request-promise-native "^1.0.8"
+    semver "^6.1.0"
+    strip-ansi "^6.0.0"
+
+"@vue/cli-shared-utils@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.4.5.tgz#fe5025a28043fec9d6a301107325433a63eafccc"
+  integrity sha512-DChYSjidHZmHtxROIp1WHlvhp06AkUzNBdkw0+uJ6FWHSQmkeRpsCU9XYTdsyRbatHzO0wnJ6GO+20yl3ZzLPw==
+  dependencies:
+    "@hapi/joi" "^15.0.1"
+    chalk "^2.4.2"
+    execa "^1.0.0"
+    launch-editor "^2.2.1"
+    lru-cache "^5.1.1"
+    node-ipc "^9.1.1"
+    open "^6.3.0"
+    ora "^3.4.0"
+    read-pkg "^5.1.1"
+    request "^2.88.2"
     semver "^6.1.0"
     strip-ansi "^6.0.0"
 
@@ -7914,6 +7944,11 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-router@^3.2.0:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.3.4.tgz#4e38abc34a11c41b6c3d8244449a2e363ba6250b"
+  integrity sha512-SdKRBeoXUjaZ9R/8AyxsdTqkOfMcI5tWxPZOUX5Ie1BTL5rPSZ0O++pbiZCeYeythiZIdLEfkDiQPKIaWk5hDg==
+
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"
   resolved "https://registry.npm.taobao.org/vue-style-loader/download/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
@@ -7939,6 +7974,11 @@ vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha1-dllNh31LEiNEBuhONSdcbVFBJcU=
+
+vuex@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.4.0.tgz#20cc086062d750769fce1febb34e7fceeaebde45"
+  integrity sha512-ajtqwEW/QhnrBZQsZxCLHThZZaa+Db45c92Asf46ZDXu6uHXgbfVuBaJ4gzD2r4UX0oMJHstFwd2r2HM4l8umg==
 
 watchpack-chokidar2@^2.0.0:
   version "2.0.0"
