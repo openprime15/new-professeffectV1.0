@@ -6,3 +6,9 @@
     <h1>목표 작성 폼</h1>
   </div>
 </template>
+
+<script>
+export default {
+  name: "WriteGoal"
+};
+</script>
