@@ -41,10 +41,20 @@
     <a id="create-kakao-link-btn" @click="shareKakao">
       <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
     </a>
-    <div id="fb-root"></div>
+    <iframe
+      src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=large&width=92&height=28&appId"
+      width="92"
+      height="28"
+      style="border:none;overflow:hidden"
+      scrolling="no"
+      frameborder="0"
+      allowtransparency="true"
+      allow="encrypted-media"
+    ></iframe>
+    <!-- <div id="fb-root"></div>
     <div
       class="fb-share-button"
-      data-href="https://www.naver.com/"
+      data-href="https://developers.facebook.com/docs/plugins/"
       data-layout="button"
       data-size="large"
     >
@@ -53,7 +63,7 @@
         href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
         class="fb-xfbml-parse-ignore"
       >공유하기</a>
-    </div>
+    </div>-->
   </v-container>
 </template>
 

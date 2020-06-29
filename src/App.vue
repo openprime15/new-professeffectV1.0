@@ -6,12 +6,12 @@
     </v-app-bar>
 
     <v-main>
-      <v-btn>
-        <router-link to="/">Home</router-link>
-      </v-btn>|
-      <v-btn>
-        <router-link to="/write_goal">목표 쓰기</router-link>
-      </v-btn>
+      <router-link to="/">
+        <v-btn>Home</v-btn>|
+      </router-link>
+      <router-link to="/write_goal">
+        <v-btn>목표 쓰기</v-btn>
+      </router-link>
       <router-view />
     </v-main>
   </v-app>
