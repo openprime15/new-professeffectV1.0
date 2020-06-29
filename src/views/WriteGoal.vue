@@ -49,17 +49,15 @@
     <input type="text" />
     <br />세부 내용
     <textarea name id cols="30" rows="10"></textarea>
-    <hr />
-    시작 날짜 <input type="date" id="start-date" /> | 종료 날짜
+    <hr />시작 날짜
+    <input type="date" id="start-date" /> | 종료 날짜
     <input type="date" id="end-date" />
     <br />
     <input type="checkbox" />
     알람 설정
     <input type="time" />
     <a id="create-kakao-link-btn" @click="shareKakao">
-      <img
-        src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-      />
+      <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
     </a>
     <div id="fb-root"></div>
     <div
@@ -81,7 +79,7 @@
 import Multiselect from "vue-multiselect";
 export default {
   components: {
-    Multiselect,
+    Multiselect
   },
   name: "WriteGoal",
   data: () => {
@@ -91,43 +89,59 @@ export default {
         { code: 2, state: "교양" },
         { code: 3, state: "절제" },
         { code: 4, state: "공부" },
-        { code: 5, state: "저금" },
-        { code: 6, state: "나만의 로망" },
+        { code: 5, state: "기타" }
       ],
-      value: [{ name: "Javascript", code: "js" }],
-      options: [
-        { name: "Vue.js", code: "vu" },
-        { name: "Javascript", code: "js" },
-        { name: "Open Source", code: "os" },
-      ],
+      value: [],
+      // 이렇게 기본값 설정 가능 value: [{ name: "Javascript", code: "js" }],
+      options: []
     };
   },
   methods: {
+    //카테고리 선택시 세부카테고리 목록
     test(e) {
       switch (e) {
         case 1:
-          console.log(1);
-          this.options = [];
+          // console.log(1);
+          this.options = [
+            { name: "홈트레이닝", code: "1-1" },
+            { name: "걷기", code: "1-2" },
+            { name: "헬스장 가기", code: "1-3" },
+            { name: "아침 운동", code: "1-4" },
+            { name: "kg 감량", code: "1-5" }
+          ];
           break;
         case 2:
-          console.log(2);
-          this.options = [];
+          // console.log(2);
+          this.options = [
+            { name: "책 읽기", code: "2-1" },
+            { name: "신문기사 읽기", code: "2-2" },
+            { name: "강연 듣기", code: "2-3" }
+          ];
           break;
         case 3:
-          console.log(3);
-          this.options = [];
+          // console.log(3);
+          this.options = [
+            { name: "금연", code: "3-1" },
+            { name: "금주", code: "3-2" },
+            { name: "금겜", code: "3-3" },
+            { name: "일찍 기상", code: "3-4" }
+          ];
           break;
         case 4:
-          console.log(4);
-          this.options = [];
+          // console.log(4);
+          this.options = [
+            { name: "영어 공부", code: "4-1" },
+            { name: "인강 듣기", code: "4-2" },
+            { name: "자격증 취득", code: "4-3" }
+          ];
           break;
         case 5:
-          console.log(5);
-          this.options = [];
-          break;
-        case 6:
-          console.log(6);
-          this.options = [];
+          // console.log(5);
+          this.options = [
+            { name: "저축", code: "5-1" },
+            { name: "하늘 보기", code: "5-2" },
+            { name: "일기 쓰기", code: "5-3" }
+          ];
           break;
         default:
           break;
@@ -136,7 +150,7 @@ export default {
     addTag(newTag) {
       const tag = {
         name: newTag,
-        code: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000),
+        code: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000)
       };
       this.options.push(tag);
       this.value.push(tag);
@@ -152,32 +166,32 @@ export default {
             "http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png",
           link: {
             mobileWebUrl: "https://developers.kakao.com",
-            webUrl: "https://developers.kakao.com",
-          },
+            webUrl: "https://developers.kakao.com"
+          }
         },
         social: {
           likeCount: 286,
           commentCount: 45,
-          sharedCount: 845,
+          sharedCount: 845
         },
         buttons: [
           {
             title: "웹으로 보기",
             link: {
               mobileWebUrl: "https://developers.kakao.com",
-              webUrl: "https://developers.kakao.com",
-            },
+              webUrl: "https://developers.kakao.com"
+            }
           },
           {
             title: "앱으로 보기",
             link: {
               mobileWebUrl: "https://developers.kakao.com",
-              webUrl: "https://developers.kakao.com",
-            },
-          },
-        ],
+              webUrl: "https://developers.kakao.com"
+            }
+          }
+        ]
       });
-    },
-  },
+    }
+  }
 };
 </script>
