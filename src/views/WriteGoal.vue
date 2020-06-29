@@ -18,6 +18,24 @@
         ></v-select>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col cols="12" sm="3">
+        <p class="text-center font-weight-black">태그</p>
+      </v-col>
+      <v-col class="d-flex" cols="12" sm="9">
+        <multiselect
+          v-model="value"
+          tag-placeholder="Add this as new tag"
+          placeholder="넣고 싶은 태그"
+          label="name"
+          track-by="code"
+          :options="options"
+          :multiple="true"
+          :taggable="true"
+          @tag="addTag"
+        ></multiselect>
+      </v-col>
+    </v-row>
     <select name id>
       카테고리
       <option value>운동</option>
@@ -31,39 +49,84 @@
     <input type="text" />
     <br />세부 내용
     <textarea name id cols="30" rows="10"></textarea>
-    <hr />시작 날짜
-    <input type="date" id="start-date" /> | 종료 날짜
+    <hr />
+    시작 날짜 <input type="date" id="start-date" /> | 종료 날짜
     <input type="date" id="end-date" />
     <br />
     <input type="checkbox" />
     알람 설정
     <input type="time" />
     <a id="create-kakao-link-btn" @click="shareKakao">
-      <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
+      <img
+        src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+      />
     </a>
   </v-container>
 </template>
 
 <script>
+import Multiselect from "vue-multiselect";
 export default {
+  components: {
+    Multiselect,
+  },
   name: "WriteGoal",
   data: () => {
     return {
       items: [
-        { code: 1, state: "운동" },
-        { code: 2, state: "자격증 취득" },
-        { code: 3, state: "자기계발" },
-        { code: 4, state: "자기관리" },
-        { code: 5, state: "다이어트" },
-        { code: 6, state: "공부" },
-        { code: 7, state: "저금" },
-        { code: 8, state: "나만의 로망" }
-      ]
+        { code: 1, state: "운동, 다이어트" },
+        { code: 2, state: "교양" },
+        { code: 3, state: "절제" },
+        { code: 4, state: "공부" },
+        { code: 5, state: "저금" },
+        { code: 6, state: "나만의 로망" },
+      ],
+      value: [{ name: "Javascript", code: "js" }],
+      options: [
+        { name: "Vue.js", code: "vu" },
+        { name: "Javascript", code: "js" },
+        { name: "Open Source", code: "os" },
+      ],
     };
   },
   methods: {
     test(e) {
-      console.log(e);
+      switch (e) {
+        case 1:
+          console.log(1);
+          this.options = [];
+          break;
+        case 2:
+          console.log(2);
+          this.options = [];
+          break;
+        case 3:
+          console.log(3);
+          this.options = [];
+          break;
+        case 4:
+          console.log(4);
+          this.options = [];
+          break;
+        case 5:
+          console.log(5);
+          this.options = [];
+          break;
+        case 6:
+          console.log(6);
+          this.options = [];
+          break;
+        default:
+          break;
+      }
+    },
+    addTag(newTag) {
+      const tag = {
+        name: newTag,
+        code: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000),
+      };
+      this.options.push(tag);
+      this.value.push(tag);
     },
     // 카카오톡으로 공유하기
     shareKakao() {
@@ -76,32 +139,32 @@ export default {
             "http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png",
           link: {
             mobileWebUrl: "https://developers.kakao.com",
-            webUrl: "https://developers.kakao.com"
-          }
+            webUrl: "https://developers.kakao.com",
+          },
         },
         social: {
           likeCount: 286,
           commentCount: 45,
-          sharedCount: 845
+          sharedCount: 845,
         },
         buttons: [
           {
             title: "웹으로 보기",
             link: {
               mobileWebUrl: "https://developers.kakao.com",
-              webUrl: "https://developers.kakao.com"
-            }
+              webUrl: "https://developers.kakao.com",
+            },
           },
           {
             title: "앱으로 보기",
             link: {
               mobileWebUrl: "https://developers.kakao.com",
-              webUrl: "https://developers.kakao.com"
-            }
-          }
-        ]
+              webUrl: "https://developers.kakao.com",
+            },
+          },
+        ],
       });
-    }
-  }
+    },
+  },
 };
 </script>
