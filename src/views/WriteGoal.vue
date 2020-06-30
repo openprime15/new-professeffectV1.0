@@ -12,7 +12,7 @@
           :items="items"
           item-value="code"
           item-text="state"
-          @change="test"
+          @change="changeCategory"
           label="카테고리"
           outlined
         ></v-select>
@@ -108,7 +108,7 @@ export default {
   },
   methods: {
     //카테고리 선택시 세부카테고리 목록
-    test(e) {
+    changeCategory(e) {
       switch (e) {
         case 1:
           // console.log(1);
