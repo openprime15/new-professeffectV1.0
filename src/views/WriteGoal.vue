@@ -41,7 +41,11 @@
         <p class="text-center font-weight-black">내용</p>
       </v-col>
       <v-col class="d-flex" cols="12" sm="9">
-        <v-text-field label="내용을 입력해주세요" single-line outlined></v-text-field>
+        <v-text-field
+          label="내용을 입력해주세요"
+          single-line
+          outlined
+        ></v-text-field>
       </v-col>
     </v-row>
     <v-row>
@@ -63,7 +67,6 @@
     </v-row>
 
     <DateTest />
-
     <v-row>
       <v-col cols="6">
         <v-switch value input-value="true"></v-switch>
@@ -82,8 +85,8 @@
     <input type="text" />
     <br />세부 내용
     <textarea name id cols="30" rows="10"></textarea>
-    <hr />시작 날짜
-    <input type="date" id="start-date" /> | 종료 날짜
+    <hr />
+    시작 날짜 <input type="date" id="start-date" /> | 종료 날짜
     <input type="date" id="end-date" />
     <br />
     <input type="checkbox" />
@@ -98,10 +101,11 @@
 <script>
 import Multiselect from "vue-multiselect";
 import DateTest from "@/components/DateTest.vue";
+import "material-design-icons-iconfont/dist/material-design-icons.css";
 export default {
   components: {
     Multiselect,
-    DateTest
+    DateTest,
   },
   name: "WriteGoal",
   data: () => {
@@ -111,12 +115,12 @@ export default {
         { code: 2, state: "교양" },
         { code: 3, state: "절제" },
         { code: 4, state: "공부" },
-        { code: 5, state: "기타" }
+        { code: 5, state: "기타" },
       ],
       value: [],
       // 이렇게 기본값 설정 가능 value: [{ name: "Javascript", code: "js" }],
       options: [],
-      rows: 1
+      rows: 1,
     };
   },
   methods: {
@@ -134,7 +138,7 @@ export default {
             { name: "걷기", code: "1-2" },
             { name: "헬스장 가기", code: "1-3" },
             { name: "아침 운동", code: "1-4" },
-            { name: "kg 감량", code: "1-5" }
+            { name: "kg 감량", code: "1-5" },
           ];
           break;
         case 2:
@@ -142,7 +146,7 @@ export default {
           this.options = [
             { name: "책 읽기", code: "2-1" },
             { name: "신문기사 읽기", code: "2-2" },
-            { name: "강연 듣기", code: "2-3" }
+            { name: "강연 듣기", code: "2-3" },
           ];
           break;
         case 3:
@@ -151,7 +155,7 @@ export default {
             { name: "금연", code: "3-1" },
             { name: "금주", code: "3-2" },
             { name: "금겜", code: "3-3" },
-            { name: "일찍 기상", code: "3-4" }
+            { name: "일찍 기상", code: "3-4" },
           ];
           break;
         case 4:
@@ -159,7 +163,7 @@ export default {
           this.options = [
             { name: "영어 공부", code: "4-1" },
             { name: "인강 듣기", code: "4-2" },
-            { name: "자격증 취득", code: "4-3" }
+            { name: "자격증 취득", code: "4-3" },
           ];
           break;
         case 5:
@@ -167,7 +171,7 @@ export default {
           this.options = [
             { name: "저축", code: "5-1" },
             { name: "하늘 보기", code: "5-2" },
-            { name: "일기 쓰기", code: "5-3" }
+            { name: "일기 쓰기", code: "5-3" },
           ];
           break;
         default:
@@ -177,11 +181,11 @@ export default {
     addTag(newTag) {
       const tag = {
         name: newTag,
-        code: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000)
+        code: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000),
       };
       this.options.push(tag);
       this.value.push(tag);
-    }
-  }
+    },
+  },
 };
 </script>
