@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import WriteGoal from "../views/WriteGoal.vue";
 import KakaoCallback from "../views/KakaoCallback";
+import CompleteGoal from "../views/CompleteGoal";
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,11 @@ const routes = [
     path: "/callback/kakao",
     name: "KakaoCallback",
     component: KakaoCallback,
+  },
+  {
+    path: "/complete_goal",
+    name: "CompleteGoal",
+    component: CompleteGoal,
   },
 ];
 
