@@ -15,6 +15,9 @@
       <router-link to="/complete_goal">
         <v-btn>작성 완료 페이지</v-btn>
       </router-link>
+      <router-link to="/board_list">
+        <v-btn>목표 게시판</v-btn>
+      </router-link>
       <router-view />
     </v-main>
   </v-app>
