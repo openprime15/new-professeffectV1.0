@@ -36,6 +36,39 @@
         ></multiselect>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col cols="12" sm="3">
+        <p class="text-center font-weight-black">내용</p>
+      </v-col>
+      <v-col class="d-flex" cols="12" sm="9">
+        <v-text-field label="내용을 입력해주세요" single-line outlined></v-text-field>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" sm="3">
+        <p class="text-center font-weight-black">주</p>
+      </v-col>
+      <v-col class="d-flex" cols="12" sm="9">
+        <v-text-field
+          v-model="rows"
+          class="mx-4"
+          label="회"
+          max="7"
+          min="1"
+          step="1"
+          style="width: 125px"
+          type="number"
+        ></v-text-field>
+      </v-col>
+    </v-row>
+
+    <DateTest />
+
+    <v-row>
+      <v-col cols="6">
+        <v-switch value input-value="true"></v-switch>
+      </v-col>
+    </v-row>
     <select name id>
       카테고리
       <option value>운동</option>
@@ -56,40 +89,19 @@
     <input type="checkbox" />
     알람 설정
     <input type="time" />
-    <a id="create-kakao-link-btn" @click="shareKakao">
-      <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
-    </a>
-    <iframe
-      src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=large&width=92&height=28&appId"
-      width="92"
-      height="28"
-      style="border:none;overflow:hidden"
-      scrolling="no"
-      frameborder="0"
-      allowtransparency="true"
-      allow="encrypted-media"
-    ></iframe>
-    <!-- <div id="fb-root"></div>
-    <div
-      class="fb-share-button"
-      data-href="https://developers.facebook.com/docs/plugins/"
-      data-layout="button"
-      data-size="large"
-    >
-      <a
-        target="_blank"
-        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-        class="fb-xfbml-parse-ignore"
-      >공유하기</a>
-    </div>-->
+    <div>
+      <v-btn id="goButton" @click="toWriteForm">작성완료</v-btn>
+    </div>
   </v-container>
 </template>
 
 <script>
 import Multiselect from "vue-multiselect";
+import DateTest from "@/components/DateTest.vue";
 export default {
   components: {
-    Multiselect
+    Multiselect,
+    DateTest
   },
   name: "WriteGoal",
   data: () => {
@@ -103,10 +115,15 @@ export default {
       ],
       value: [],
       // 이렇게 기본값 설정 가능 value: [{ name: "Javascript", code: "js" }],
-      options: []
+      options: [],
+      rows: 1
     };
   },
   methods: {
+    //작성완료 페이지로 이동
+    toWriteForm() {
+      this.$router.push("/complete_goal");
+    },
     //카테고리 선택시 세부카테고리 목록
     changeCategory(e) {
       switch (e) {
@@ -164,43 +181,6 @@ export default {
       };
       this.options.push(tag);
       this.value.push(tag);
-    },
-    // 카카오톡으로 공유하기
-    shareKakao() {
-      window.Kakao.Link.sendDefault({
-        objectType: "feed",
-        content: {
-          title: "떠벌림",
-          description: "#목표 #달성 #달성 #목표 #분위기 #소개팅",
-          imageUrl:
-            "http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png",
-          link: {
-            mobileWebUrl: "https://developers.kakao.com",
-            webUrl: "https://developers.kakao.com"
-          }
-        },
-        social: {
-          likeCount: 286,
-          commentCount: 45,
-          sharedCount: 845
-        },
-        buttons: [
-          {
-            title: "웹으로 보기",
-            link: {
-              mobileWebUrl: "https://developers.kakao.com",
-              webUrl: "https://developers.kakao.com"
-            }
-          },
-          {
-            title: "앱으로 보기",
-            link: {
-              mobileWebUrl: "https://developers.kakao.com",
-              webUrl: "https://developers.kakao.com"
-            }
-          }
-        ]
-      });
     }
   }
 };

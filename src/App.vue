@@ -12,6 +12,9 @@
       <router-link to="/write_goal">
         <v-btn>목표 쓰기</v-btn>
       </router-link>
+      <router-link to="/complete_goal">
+        <v-btn>작성 완료 페이지</v-btn>
+      </router-link>
       <router-view />
     </v-main>
   </v-app>
