@@ -27,7 +27,7 @@
 export default {
   name: "App",
   created() {
-    window.Kakao.init(process.env.VUE_APP_CLIENT_ID);
+    window.Kakao.init(process.env.VUE_APP_KAKAO_ID);
   },
   components: {},
 
