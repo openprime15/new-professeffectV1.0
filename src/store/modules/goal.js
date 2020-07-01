@@ -25,22 +25,6 @@ const getters = {
   getAlarmTime: (state) => state.alarmTime,
 };
 const mutations = {
-  setAlarmTime(state, data) {
-    state.alarmTime = data;
-  },
-  setAlarm(state, data) {
-    state.alarm = data;
-  },
-  setRows(state, data) {
-    state.rows = data;
-  },
-  setDate(state, data) {
-    state.date = data;
-  },
-
-  setTitle(state, data) {
-    state.title = data;
-  },
   // 카테고리 부분
   setOptions(state, data) {
     switch (data) {
@@ -92,6 +76,22 @@ const mutations = {
   },
   setValue(state, data) {
     state.value = data;
+  },
+  setTitle(state, data) {
+    state.title = data;
+  },
+  setDate(state, data) {
+    state.date = data;
+  },
+  setRows(state, data) {
+    state.rows = data;
+  },
+
+  setAlarm(state, data) {
+    state.alarm = data;
+  },
+  setAlarmTime(state, data) {
+    state.alarmTime = data;
   },
 };
 const actions = {};

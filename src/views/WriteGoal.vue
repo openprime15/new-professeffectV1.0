@@ -122,21 +122,14 @@ export default {
   name: "WriteGoal",
   data: () => {
     return {
-      date: [new Date().toISOString().substr(0, 10)],
-      menu: false,
-      today: new Date().toISOString().substr(0, 10),
       // 이렇게 기본값 설정 가능 value: [{ name: "Javascript", code: "js" }],
-      value: []
+      value: [],
+      date: [new Date().toISOString().substr(0, 10)],
+      today: new Date().toISOString().substr(0, 10),
+      menu: false
     };
   },
   methods: {
-    allowedDates(val) {
-      return this.date[1] ? val >= this.today : val >= this.date[0];
-    },
-    //작성완료 페이지로 이동
-    toWriteForm() {
-      this.$router.push("/complete_goal");
-    },
     //카테고리 선택시 세부카테고리 목록
     changeCategory(e) {
       this.$store.commit("setOptions", e);
@@ -149,6 +142,14 @@ export default {
       };
       this.value.push(tag);
       this.$store.commit("setTag", tag);
+    },
+    //가능한 날짜 설정
+    allowedDates(val) {
+      return this.date[1] ? val >= this.today : val >= this.date[0];
+    },
+    //작성완료 페이지로 이동
+    toWriteForm() {
+      this.$router.push("/complete_goal");
     }
   },
   watch: {
@@ -159,20 +160,13 @@ export default {
     }
   },
   computed: {
-    stateAlarmTime: {
+    ...mapGetters(["getItems", "getOptions"]),
+    stateTitle: {
       get() {
-        return this.$store.state.Goal.alarmTime;
+        return this.$store.state.Goal.title;
       },
       set(e) {
-        this.$store.commit("setAlarmTime", e);
-      }
-    },
-    stateAlarm: {
-      get() {
-        return this.$store.state.Goal.alarm;
-      },
-      set(e) {
-        this.$store.commit("setAlarm", e);
+        this.$store.commit("setTitle", e);
       }
     },
     stateRows: {
@@ -183,15 +177,23 @@ export default {
         this.$store.commit("setRows", e);
       }
     },
-    stateTitle: {
+    stateAlarm: {
       get() {
-        return this.$store.state.Goal.title;
+        return this.$store.state.Goal.alarm;
       },
       set(e) {
-        this.$store.commit("setTitle", e);
+        this.$store.commit("setAlarm", e);
       }
     },
-    ...mapGetters(["getItems", "getOptions"]),
+    stateAlarmTime: {
+      get() {
+        return this.$store.state.Goal.alarmTime;
+      },
+      set(e) {
+        this.$store.commit("setAlarmTime", e);
+      }
+    },
+
     selectDate() {
       this.$store.commit("setDate", this.date);
       const format = this.date.join("~");
