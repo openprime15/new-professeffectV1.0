@@ -8,6 +8,7 @@
         책임을 느끼고 약속을 더 잘 지키게 되는 효과입니다. 새해에 다짐한 목표,
         항상 생각하던 자기계발 잘 지키시지 않으신가요? 지금 여러분의 목표를
         설정해 주세요. 저희가 떠벌려드리겠습니다.
+        <div id="firebaseui-auth-container"></div>
       </v-col>
       <v-col cols="6">
         <img src="../img/HomeImage.jpg" width="300" height="300" alt />
@@ -20,13 +21,32 @@
 </template>
 
 <script>
+var firebase = require("firebase");
+var firebaseui = require("firebaseui");
+
 export default {
   name: "HomeBody",
   methods: {
     toWriteForm() {
       this.$router.push("/write_goal");
-    },
+    }
   },
+  mounted: function() {
+    var uiConfig = {
+      signInSuccessUrl: "/",
+
+      signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+
+      tosUrl: "/",
+
+      privacyPolicyUrl: function() {
+        window.location.assign("/");
+      }
+    };
+
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start("#firebaseui-auth-container", uiConfig);
+  }
 };
 </script>
 
