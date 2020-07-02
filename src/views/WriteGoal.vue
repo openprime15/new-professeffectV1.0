@@ -195,8 +195,8 @@ export default {
     },
 
     selectDate() {
-      this.$store.commit("setDate", this.date);
       const format = this.date.join("~");
+      this.$store.commit("setDate", format);
       return format;
     }
   }

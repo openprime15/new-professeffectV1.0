@@ -1,4 +1,5 @@
 const state = {
+  cagetory: "",
   items: [
     { code: 1, state: "운동, 다이어트" },
     { code: 2, state: "교양" },
@@ -9,12 +10,13 @@ const state = {
   options: [],
   value: [],
   title: "",
-  date: [],
+  date: "",
   rows: 3,
   alarm: true,
   alarmTime: "12:30:00",
 };
 const getters = {
+  getCategory: (state) => state.cagetory,
   getItems: (state) => state.items,
   getOptions: (state) => state.options,
   getValue: (state) => state.value,
@@ -36,6 +38,7 @@ const mutations = {
           { name: "아침 운동", code: "1-4" },
           { name: "kg 감량", code: "1-5" },
         ];
+        state.cagetory = "운동, 다이어트";
         break;
       case 2:
         state.options = [
@@ -43,6 +46,7 @@ const mutations = {
           { name: "신문기사 읽기", code: "2-2" },
           { name: "강연 듣기", code: "2-3" },
         ];
+        state.cagetory = "교양";
         break;
       case 3:
         state.options = [
@@ -51,6 +55,7 @@ const mutations = {
           { name: "금겜", code: "3-3" },
           { name: "일찍 기상", code: "3-4" },
         ];
+        state.cagetory = "절제";
         break;
       case 4:
         state.options = [
@@ -58,6 +63,7 @@ const mutations = {
           { name: "인강 듣기", code: "4-2" },
           { name: "자격증 취득", code: "4-3" },
         ];
+        state.cagetory = "공부";
         break;
       case 5:
         state.options = [
@@ -65,6 +71,7 @@ const mutations = {
           { name: "하늘 보기", code: "5-2" },
           { name: "일기 쓰기", code: "5-3" },
         ];
+        state.cagetory = "기타";
         break;
       default:
         break;
