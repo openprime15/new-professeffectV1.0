@@ -1,6 +1,12 @@
 <template>
   <v-container>
     <h1>작성완료 페이지 제작</h1>
+    <v-row>{{getValue}}</v-row>
+    <v-row>{{getTitle}}</v-row>
+    <v-row>{{getDate}}</v-row>
+    <v-row>{{getRows}}</v-row>
+    <v-row>{{getAlarm}}</v-row>
+    <v-row>{{getAlarmTime}}</v-row>
     <a id="create-kakao-link-btn" @click="shareKakao">
       <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
     </a>
@@ -31,6 +37,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "CompleteGoal",
   methods: {
@@ -71,6 +78,16 @@ export default {
         ]
       });
     }
+  },
+  computed: {
+    ...mapGetters([
+      "getValue",
+      "getTitle",
+      "getDate",
+      "getRows",
+      "getAlarm",
+      "getAlarmTime"
+    ])
   }
 };
 </script>
