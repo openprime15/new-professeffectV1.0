@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="width:50%">
     <h1>여기가 홈화면</h1>
     <v-row no-gutters>
       <v-col cols="6">
