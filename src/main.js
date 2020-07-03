@@ -9,13 +9,13 @@ Vue.config.productionTip = false;
 
 firebase.initializeApp({
   apiKey: process.env.VUE_APP_FIREBASE_KEY,
-  authDomain: "t4ir-blockchain-testprime.firebaseapp.com",
-  databaseURL: "https://t4ir-blockchain-testprime.firebaseio.com",
-  projectId: "t4ir-blockchain-testprime",
+  authDomain: "mck-professeffect.firebaseapp.com",
+  databaseURL: "https://mck-professeffect.firebaseio.com",
+  projectId: "mck-professeffect",
   storageBucket: process.env.VUE_APP_FIREBASE_STORAGE,
-  messagingSenderId: "350660345449",
-  appId: "1:350660345449:web:e3bd9365e440cdc1306cf8",
-  measurementId: "G-2M1FGCNFFQ",
+  messagingSenderId: "720806938339",
+  appId: "1:720806938339:web:36ee38427765d05ba127d6",
+  measurementId: "G-ZSZ25KLRLR",
 });
 
 new Vue({
