@@ -1,8 +1,7 @@
 <template>
   <v-container style="width:50%">
-    <h1>여기가 홈화면</h1>
-    <v-row no-gutters>
-      <v-col cols="6">
+    <v-row no-gutters class="pt-10">
+      <v-col cols="12" sm="6">
         안녕하세요? 목표달성 도우미 서비스 떠벌림입니다. 떠벌림 효과란 자신의
         목표로 삼은 행동을 공개적으로 남들에게 알림으로써 자신이 한 일에 더
         책임을 느끼고 약속을 더 잘 지키게 되는 효과입니다. 새해에 다짐한 목표,
@@ -11,7 +10,7 @@
         <div id="firebaseui-auth-container"></div>
         <!-- <button @click="GoogleLogin" class="google-button"></button> -->
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" sm="6">
         <img src="../img/HomeImage.jpg" width="300" height="300" alt />
         <div>
           <v-btn id="goButton" @click="toWriteForm">시작하기</v-btn>

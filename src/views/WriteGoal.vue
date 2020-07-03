@@ -2,7 +2,7 @@
   <v-container style="width:50%">
     <!-- 목표 페이스북 또는 카카오톡 공유 페이지 -->
 
-    <h1 class="text-center font-weight-black">목표 떠벌림</h1>
+    <h1 class="text-center font-weight-black pt-5">목표 떠벌림</h1>
     <v-row justify="center">
       <v-col cols="12" sm="3">
         <p id="formText" class="font-weight-black text-sm-center">카테고리</p>
