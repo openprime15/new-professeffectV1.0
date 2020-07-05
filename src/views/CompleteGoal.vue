@@ -127,8 +127,8 @@ export default {
           description: `#목표 #달성${this.getFormatValue}`,
           imageUrl: `https://firebasestorage.googleapis.com/v0/b/t4ir-blockchain-testprime.appspot.com/o/${this.imageId}.jpg?alt=media`,
           link: {
-            mobileWebUrl: "https://developers.kakao.com",
-            webUrl: "https://developers.kakao.com"
+            mobileWebUrl: "https://ecstatic-babbage-59c097.netlify.app",
+            webUrl: "https://ecstatic-babbage-59c097.netlify.app"
           }
         },
         social: {
